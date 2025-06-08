@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Result page</title>
+</head>
+
+<body>
+
+    <div class="first-section w-full  min-w-[750px] pb-30 bg-[#1A5B3E] flex flex-col items-center  "
+        id="home">
+
+        <div
+            class="nav  w-full min-h-15 z-100 fixed flex bg-[#f9f7f3]  justify-end items-center  mb-10 shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
+            <div class="btns w-1/3 flex justify-end items-center  gap-8 mr-20 text-lg  ">
+                <a class="text-green-800  hover:text-black transition duration-300 ease-in-out" href="/">Home</a>
+                <a class="text-green-800 hover:text-black transition duration-300 ease-in-out " href="/#about">About</a>
+
+                <a class="px-3 py-1 border-[1px] hover:bg-green-800 transition duration-300 ease-in-out text-green-800 hover:text-white  border-green-800 rounded-md"
+                    href="/#scan-plant">Scan Plant</a>
+            </div>
+        </div>
+
+
+        <h3 class="font-extrabold mb-5 mt-20 flex justify-center font-mono text-white text-6xl px-2 py-3">Analyze Result</h3>
+        <!-- the heading part in the page -->
+        <div class="result-container w-[60%] min-w-[750px] flex flex-col  bg-white rounded-3xl min-h-80 drop-shadow-[1px_5px_10px_rgba(0,0,0,0.6)] ">
+
+            {% if prediction['cause'] =='No disease present.'%}
+            <div
+                class="heading-container px-10 py-5 flex gap-2 items-center rounded-tl-3xl  rounded-tr-3xl w-full bg-green-200">
+                <div class="heading-img w-13 h-13   overflow-hidden">
+                    <img class="w-full" src="../static//images/tick.png" alt="" srcset="">
+                </div>
+                <div class="disease-info ">
+                    <h2 class="text-3xl font-medium">Plant Healthy</h2>
+                    <p class="text-sm px-2">Your plant appears to be healthy</p>
+                </div>
+
+            </div>
+
+            {% elif prediction['cause'] == 'No disease or plant detected.' %}
+
+            <div
+                class="heading-container px-10 py-5 flex gap-2 items-center rounded-tl-3xl  rounded-tr-3xl w-full bg-gray-400">
+                <div class="heading-img w-13 h-13   overflow-hidden">
+                    <img class="w-full" src="../static//images/cloud.png" alt="" srcset="">
+                </div>
+                <div class="disease-info ">
+                    <h2 class="text-3xl font-medium">No Plant Detected</h2>
+                    <p class="text-sm px-2">It seems no plant are there.</p>
+                </div>
+
+            </div>
+
+            {% else %}
+            <div
+                class="heading-container px-10 py-5 flex gap-2 items-center rounded-tl-3xl  rounded-tr-3xl w-full bg-red-200">
+                <div class="heading-img w-13 h-13   overflow-hidden">
+                    <img class="w-full" src="../static//images/!mark.png" alt="" srcset="">
+                </div>
+                <div class="disease-info ">
+                    <h2 class="text-3xl font-medium">Disease Detected</h2>
+                    <p class="text-sm px-2">We detected issues with your plant</p>
+                </div>
+
+            </div>
+
+
+
+            {% endif %}
+            <div class=" w-full flex gap-20 px-10 py-5">
+
+
+                <div class="img-container flex flex-col gap-5 items-center">
+                    <div
+                        class="plant-img w-60 h-60 min-w-40 min-h-40 rounded-lg object-fit overflow-hidden drop-shadow-[0_8px_10px_rgba(0,0,0,1)]">
+                        <img class="w-full h-full" src="{{imagepath}}" alt="" srcset="">
+                    </div>
+                    <a class="px-2 py-2 mt-2 text-white bg-green-700 hover:bg-green-800 cursor-pointer border-[1px] rounded-md border-green-600"
+                        href="/#scan-plant">Analyze Again -->
+                    </a>
+
+                </div>
+                <div class="plant-details w-[60%] flex flex-col pb-10 gap-2 items-start ">
+                    <h3 class="text-black text-lg flex gap-2 items-center mb-2"><span
+                            class="w-4 h-4   overflow-hidden "><img class="w-full  object-cover text-green-700"
+                                src="../static/images/gacherpata.png" alt="" srcset=""></span>Plant Information
+                    </h3>
+
+                    <h3
+                        class="disease-name py-2 px-2 rounded-lg hover:bg-gray-200 transition ease-in-out  bg-gray-100  text-gray-700 text-lg flex gap-2 items-center w-full flex justify-between ">
+                        Plant Type/Disease :<span class="text-md mx-2  text-black ">{{prediction['name']}}</span>
+                    </h3>
+
+                    {% if prediction['cause'] =='No disease present.'%}
+                    <h3
+                        class="disease-status text-gray-700 py-2 px-2 rounded-lg hover:bg-gray-200 transition ease-in-out bg-gray-100 text-lg flex gap-2 items-center w-full justify-between">
+                        Status: <span class="text-md mx-2 text-green-600">Healthy</span>
+                    </h3>
+                    {% elif prediction['cause'] == 'No disease or plant detected.' %}
+                    <h3
+                        class="disease-status text-gray-700 py-2 px-2 rounded-lg hover:bg-gray-200 transition ease-in-out bg-gray-100 text-lg flex gap-2 items-center w-full justify-between">
+                        Status: <span class="text-md mx-2 text-black">Unpredictable</span>
+                    </h3>
+                    {% else %}
+                    <h3
+                        class="disease-status text-gray-700 py-2 px-2 rounded-lg hover:bg-gray-200 transition ease-in-out bg-gray-100 text-lg flex gap-2 items-center w-full justify-between">
+                        Status: <span class="text-md mx-2 text-red-600">Diseased</span>
+                    </h3>
+                    {% endif %}
+
+                    <h3 class="text-black text-lg mt-5 flex gap-2 items-center mb-2"><span
+                            class="w-5 h-5 text-green-700  overflow-hidden "><img class="w-full  object-cover"
+                                src="../static/images/virus-7.png" alt="" srcset=""></span>Cause
+                    </h3>
+                    {% if prediction['cause'] =='No disease present.'%}
+                    <h3
+                        class="disease-cause pl-8 py-2 rounded-lg hover:bg-gray-200 transition ease-in-out text-green-500 bg-gray-100  text-green-400 text-lg flex      items-center w-full flex justify-between ">
+                        {{prediction['cause']}}
+                    </h3>
+
+                    {% else %}
+                    <h3
+                        class="disease-cause pl-8 py-2 rounded-lg hover:bg-gray-200 transition ease-in-out text-green-500 bg-gray-100  text-red-400 text-lg flex    items-center w-full flex justify-between ">
+                        {{prediction['cause']}}
+                    </h3>
+                    {% endif %}
+                    <h3 class="text-black text-xl mt-5 flex gap-2 items-center mb-1">
+                        <span class="w-5 h-5 text-green-700  overflow-hidden">
+                            <img class="w-full object-cover" src="../static/images/fastaid.png" alt="">
+                        </span>
+                        Prevention
+                    </h3>
+                    <h3
+                        class="disease-cure pl-8 py-2 rounded-lg hover:bg-gray-200 transition ease-in-out text-green-500 bg-gray-100 text-lg flex  items-center w-full flex justify-between ">
+                        {{prediction['cure']}}
+                    </h3>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>

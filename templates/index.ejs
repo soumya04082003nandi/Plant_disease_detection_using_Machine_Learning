@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Technologiaa</title>
+</head>
+
+<body class="bg-white  w-full h-full">
+
+    <!-- First section landing page -->
+
+    <div class="first-section w-full min-w-[750px] pb-30 bg-[#1A5B3E]  " id="home">
+        <div
+            class="nav  w-full min-h-15 z-100 fixed flex bg-[#f9f7f3]  justify-end items-center  mb-10 shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
+            <div class="btns w-1/3 flex justify-end items-center  gap-8 mr-20 text-lg  ">
+                <a class="text-green-800  hover:text-black transition duration-300 ease-in-out" href="#home">Home</a>
+                <a class="text-green-800 hover:text-black transition duration-300 ease-in-out " href="#about">About</a>
+                <a class="px-3 py-1 border-[1px] hover:bg-green-800 transition duration-300 ease-in-out text-green-800 hover:text-white  border-green-800 rounded-md"
+                    href="#scan-plant">Scan Plant</a>
+            </div>
+        </div>
+        <div class="main w-full flex flex-wrap pt-20  justify-center gap-5  ">
+            <div class="left  font-mono  w-1/2 min-w-[550px]  rounded-3xl">
+                <h1 class="w-2/3 font-extrabold ml-10 flex justify-center font-mono text-white text-6xl px-2 py-3">
+                    Detect Plant Diseases</h1>
+                <h1 class="w-2/3 font-extrabold ml-10  flex flex-wrap  text-yellow-300  px-2 py-3 text-6xl ">Using <span
+                        class="text-6xl mr-3 ml-3 text-red-500 ">ML</span>Model </h1>
+                <p class="w-full ml-15 text-white  text-lg pr-10">Upload your plant images and get instant analysis,
+                    disease identification, and treatment recommendations powered by machine learning. </p>
+                <div class="btns w-full flex justify-center mt-5">
+                    <a class="px-3 py-2 bg-yellow-400 hover:bg-yellow-600 transition duration-300 ease-in-out hover:text-white text-black rounded-md mr-5"
+                        href="#scan-plant">Analyze Your Plant --></a>
+                    <a class="px-3 py-2 border-[1px] hover:bg-white transition duration-300 ease-in-out text-white hover:text-black  border-white rounded-md mr-5"
+                        href="#about">How to Analyze</a>
+                </div>
+
+            </div>
+            <div class="right  w-1/3 flex justify-center flex-col items-center rounded-3xl">
+                <div class="bg-img min-w-[320px]   overflow-hidden p-10 w-full flex justify-center  object-fit ">
+                    <img class="w-90 min-w-[300px] rounded-3xl drop-shadow-[0_8px_10px_rgba(0,0,0,0.8)] "
+                        src="../static/images/home-bg.jpg" alt="" srcset="">
+                </div>
+                <h3
+                    class="pr-10  min-w-[220px] drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] flex px-2 rounded-lg  py-3 mb-8 items-center bg-yellow-500 text-md">
+                    Helping farmers identify plant diseases early</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- How It Works section -->
+
+    <div id="about" class="about w-full  pt-25 w-full min-w-[750px] pb-25  bg-[#eff7f6] flex flex-col items-center">
+        <h2 class="about-heading text-5xl font-bold text-[#1A5B3E]">How It Works</h2>
+        <h3 class="text-md text-gray-500 mt-5">Get accurate plant disease analysis in three simple steps</h3>
+        <div class="about-content-container flex-wrap flex gap-20 w-full justify-center px-30 mt-10 ">
+            <div class="about-content w-2/7  min-w-[300px]  flex flex-col gap-3 pl-10 pr-5 py-5 rounded-lg hover:scale-102 duration-300 drop-shadow-[0_0.5px_2px_rgba(0,0,0,0.1)] hover:drop-shadow-[0_0.5px_5px_rgba(0,0,0,0.2)] bg-white transition duration-100 ease-in-out">
+                <div class="w-14 h-14 rounded-md mb-4 mt-2 flex justify-center items-center overflow-hidden text-green-600 bg-green-100 ">
+                    <img class="w-full p-2 object-cover" src="../static/images/img-up-icon.png" alt="">
+                
+                </div>
+                <h3 class="text-xl font-medium ">Upload Image</h3>
+                <h5 class="w-full flex flex-wrap text-gray-600">Take a photo of your plant or upload an existing image. Make sure the affected area is clearly visible.</h5>
+
+
+            </div>
+            <div class="about-content w-2/7 flex min-w-[300px]  flex-col gap-3 pl-10 pr-5 py-5 rounded-lg hover:scale-102 duration-300 drop-shadow-[0_0.5px_2px_rgba(0,0,0,0.1)] hover:drop-shadow-[0_0.5px_5px_rgba(0,0,0,0.2)] bg-white transition duration-100 ease-in-out">
+                <div class="w-14 h-14 mb-4 mt-2 flex justify-center items-center rounded-md overflow-hidden text-green-600 bg-green-100 ">
+                    <img class="w-full p-2 object-cover" src="../static/images/ai.png" alt="">
+                
+                </div>
+                <h3 class="text-xl font-medium ">ML Analysis</h3>
+                <h5 class="w-full flex flex-wrap text-gray-600">Our machine learning model analyzes the image to identify the plant, detect diseases, and assess severity.</h5>
+
+
+            </div>
+             <div class="about-content w-2/7 flex  min-w-[300px] flex-col gap-3 pl-10 pr-5 py-5 rounded-lg hover:scale-102 duration-300 drop-shadow-[0_0.5px_2px_rgba(0,0,0,0.1)] hover:drop-shadow-[0_0.5px_5px_rgba(0,0,0,0.2)] bg-white transition duration-100 ease-in-out">
+                <div class="w-14 h-14 mb-4 mt-2 flex justify-center items-center rounded-md overflow-hidden bg-yellow-100  ">
+                    <img class="w-full p-2 object-cover" src="../static/images/download-output.png" alt="">
+                
+                </div>
+                <h3 class="text-xl font-medium ">Get Results</h3>
+                <h5 class="w-full flex flex-wrap text-gray-600">Receive detailed analysis with disease information and personalized treatment recommendations.</h5>
+
+
+            </div>
+
+        </div>
+       
+    </div>
+
+
+    <!-- temporary for alignment -->
+
+    <div id="scan-plant" class="min-h-15"></div>
+
+
+    <!-- Analysis the plant section -->
+
+    <div class="analyze-img  w-full flex flex-col items-center p-10 min-w-[750px] pb-30 ">
+        <h1 class="w-2/3 font-extrabold ml-10 flex justify-center font-mono text-green-800 text-6xl px-2 py-3">
+            Plant Analysis</h1>
+        <h3 class=" w-full px-10 flex-wrap min-w[400px] flex justify-center items-center text-xl text-gray-600">Upload
+            an image of your plant
+            for AI-powered disease detection and treatment recommendations</h3>
+        <form action="/upload/" method="post" enctype="multipart/form-data"
+            class="w-1/3 mt-10 min-h-40 h-60  flex justify-center flex-col items-center border-gray-400">
+
+            <label for="input-img"
+                class="w-full pt-5 h-full border-[2px] border-dashed hover:border-green-600 transition duration-300 ease-in-out rounded-2xl flex flex-col items-center gap-5 justify-center text-gray-600 text-2xl cursor-pointer">Upload
+                plant
+                image <img class="w-10" src="../static/images/upload-icon.jpg" alt="" srcset="">
+                <p id="notification" class="text-sm px-2 py-1 border-[1px] border-green-600 rounded-md flex flex-wrap">No File Choosen
+                </p>
+                <input id="input-img" class="opacity-0" type="file" name="img" accept=".jpg,.jpeg,.png" required>
+
+            </label>
+
+            <button type="submit"
+               id="analyze" class="px-4 py-2 mt-4 cursor-pointer  border-2  rounded-md border-green-700">Analyze</button>
+        </form>
+    </div>
+
+
+
+
+
+
+    <script src="../static/js/index.js"></script>
+
+</body>
+
+</html>
